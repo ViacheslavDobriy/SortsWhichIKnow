@@ -1,7 +1,7 @@
 package Sorts;
 
 public class BubbleSort {
-
+    private static int swapCounter = 0;
     protected static void bubbleSort(int[] array) {
         boolean isSorted;
         do {
@@ -11,10 +11,11 @@ public class BubbleSort {
                     int temp = array[i+1];
                     array[i+1] = array[i];
                     array[i] = temp;
+                    swapCounter++;
                     isSorted = false;
                 }
             }
         } while(!isSorted);
+        System.out.println("Bubble sort made: " + swapCounter + " swaps.\n");
     }
-
 }
